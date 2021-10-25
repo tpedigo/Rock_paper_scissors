@@ -1,9 +1,10 @@
-function computerPlay() {
+function computerPlay() { //chooses random hand for computer to play
     let handChoices = ["ROCK", "PAPER", "SCISSORS"];
     return handChoices[Math.floor(Math.random()*handChoices.length)];
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) { 
+    //compares computer vs player hand with appropriate dialogue
     if (computerSelection === playerSelection) {
         return "It's a tie!";
     } else if (playerSelection === "ROCK") {
@@ -28,18 +29,18 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
+function game() { //puts everything together for a game of 5 rounds
     roundCount = 0;
     playerScore = 0;
     computerScore = 0;
-    while (roundCount < 5) {
+    while (roundCount < 5) { //first determine player and computer hands
         let playerSelection = prompt("Choose rock, paper, or scissors", "");
         playerSelection = playerSelection.toUpperCase();
         console.log(`You chose: ${playerSelection}.`);
 
         let computerSelection = computerPlay();
         console.log(`Computer chose: ${computerSelection}.`);
-
+        //compares hands and adjusts scores accordingly
         let roundOutcome = playRound(playerSelection, computerSelection);
         if (roundOutcome.substring(0, 7) == "You win") {
             playerScore += 1;
@@ -49,15 +50,17 @@ function game() {
         } else if (roundOutcome.substring(0, 8) === "You lose") {
             computerScore += 1;
         }
-        roundCount += 1;
+        roundCount += 1; //states who won round, current scores, and number of rounds left
         if (roundCount === 5) {
             console.log(`${roundOutcome}\nYour final score is: ${playerScore}.\nComputer final score is: ${computerScore}.`);
         } else if (roundCount === 4) {
-            console.log(`${roundOutcome}\nYour score is: ${playerScore}.\nComputer score is: ${computerScore}. There is 1 round left.`);
+            console.log(`${roundOutcome}\nYour score is: ${playerScore}.\nComputer score is: ${computerScore}. 
+              There is 1 round left.`);
         } else {
-            console.log(`${roundOutcome}\nYour score is: ${playerScore}.\nComputer score is: ${computerScore}. There are ${5-roundCount} rounds left.`);
+            console.log(`${roundOutcome}\nYour score is: ${playerScore}.\nComputer score is: ${computerScore}. 
+              There are ${5-roundCount} rounds left.`);
         }
-    }
+    } //comparying final scores for overall winner
     if (playerScore > computerScore) {
         console.log("You won the game - congratulations!");
     } else if (playerScore < computerScore) {
@@ -68,18 +71,3 @@ function game() {
 }
 
 game();
-
-
-// Possible (not finalized) second way to write playRound function:
-
-// function playRound2(playerSelection, computerSelection) {
-//     (computerSelection == playerSelection) ? "Tie!" : 
-//     (playerSelection == "Rock" && computerSelection == "Scissors") ? "You win! Rock beats Scissors" :
-//     (playerSelection == "Rock" && computerSelection == "Paper") ? "You lose! Paper beats Rock" :
-//     (playerSelection == "Scissors" && computerSelection == "Paper") ? "You win! Scissors beats Paper" :
-//     (playerSelection == "Scissors" && computerSelection == "Rock") ? "You lose! Rock beats Scissors" :
-//     (playerSelection == "Paper" && computerSelection == "Rock") ? "You win! Paper beats Rock" :
-//     (playerSelection == "Paper" && computerSelection == "Scissors") ? "You lose! Scissors beats Paper";
-// }
-
-// function playRound3(playerSelection, computerSelection)
