@@ -34,7 +34,7 @@ function game() { //puts everything together for a game of 5 rounds
     playerScore = 0;
     computerScore = 0;
     while (roundCount < 5) { //first determine player and computer hands
-        let playerSelection = prompt("Choose rock, paper, or scissors", "");
+        // let playerSelection = prompt("Choose rock, paper, or scissors", "");
         playerSelection = playerSelection.toUpperCase();
         console.log(`You chose: ${playerSelection}.`);
 
@@ -70,4 +70,4 @@ function game() { //puts everything together for a game of 5 rounds
     }
 }
 
-game();
+// game();
