@@ -8,14 +8,34 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <div class="window">
-        <div class="button-container">
-            <button class="Rock"><img src="images/rock.png" alt="Rock">Rock</button>
-            <button class="Paper"><img src="images/paper.png" alt="Paper">Paper</button>
-            <button class="Scissors"><img src="images/scissors.png" alt="Scissors">Scissors</button>
+    <script type="text/javascript" defer src="script.js"></script>
+
+    <div class="start-page">
+        <div class="instructions">Choose your hand to beat the computer. First to 5 points wins, good luck!</div>
+        <button class="start-button">Start game</button>
+    </div>
+    <div class="game-page">
+        <button class="home-button">Back to home page</button>
+        <div class="hand-container">
+            <button class="hand" id="rock"><img src="images/rock.png" alt="Rock">Rock</button>
+            <button class="hand" id="paper"><img src="images/paper.png" alt="Paper">Paper</button>
+            <button class="hand" id="scissors"><img src="images/scissors.png" alt="Scissors">Scissors</button>
+        </div>
+        <div class="gameboard">
+            <div class="round-details">Choose your hand!</div>
+            <button class="replay">Replay</button>
+            <div class="scores">
+                <div class="scorecard player">
+                    <p>Your score is:</p> 
+                    <p class="current-player-score">0</p>
+                </div>
+                <div class="scorecard computer">
+                    <p>Computer score is:</p> 
+                    <p class="current-computer-score">0</p>
+                </div>  
+            </div>  
         </div>
     </div>
 
-    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

@@ -3,29 +3,64 @@ html {
     justify-content: center;
     align-items: center;
     height: 100%;
-    font-family: sans-serif;
 }
 
 body {
+    font-family: sans-serif;
     background-color: thistle;
     min-height: 100%;
     display: flex;
+    gap: 20px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.start-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.instructions {
+    font-size: 24px;
+    max-width: 450px;
+    text-align: center;
+}
+.start-button,
+.home-button,
+.replay {
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 10px 26px;
+}
+
+.replay {
+    display: none;
+}
+
+.game-page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
 }
 
 img {
     height: 200px;
 }
 
-.button-container {
+.hand-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
     gap: 40px;
 }
 
-button {
+.hand {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,6 +71,35 @@ button {
     transition: transform .2s;
 }
 
-button:hover {
+.hand:hover {
     transform: scale(1.2);
+}
+
+.gameboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.scorecard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.current-player-score,
+.current-computer-score {
+    font-size: 36px;
+    margin-top: -10px;
 }
